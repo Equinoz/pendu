@@ -26,7 +26,7 @@
           return '_';
       }
     }
-  }
+  };
 </script>
 
 <style>

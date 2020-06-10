@@ -7,16 +7,23 @@
         :letter="item"
         :key="index" />
     </div>
+    <div id="keyboard">
+      <KeyboardKey v-for="item in Array.from(Array(26).keys(), i => String.fromCharCode(i + 65))"
+        :key="item"
+        :letter="item" />
+    </div>
   </div>
 </template>
 
 <script>
   import Letter from "@/components/Letter.vue";
+  import KeyboardKey from "@/components/KeyboardKey.vue";
 
   export default {
     name: 'Home',
     components: {
-      Letter
+      Letter,
+      KeyboardKey
     },
     data() {
       return {
@@ -28,6 +35,11 @@
 </script>
 
 <style>
+  .home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   h1 {
     margin: 5px;
     font-size: 50px;
@@ -35,6 +47,12 @@
 
   #wordToGuess {
     display: flex;
-    justify-content: center;
+  }
+
+  #keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    width: 1200px;
+    margin-top: 50px;
   }
 </style>
