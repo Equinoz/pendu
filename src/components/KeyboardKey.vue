@@ -1,10 +1,12 @@
 <template>
-  <div class="key">
+  <div @click.once="newAttempt" class="key" :class="{ desactivate: !activate }">
     {{ letter }}
   </div>
 </template>
 
 <script>
+  import { mapActions } from "vuex";
+
   export default {
     name: "KeyboardKey",
     props: {
@@ -17,9 +19,17 @@
       return {
         activate: true
       }
+    },
+    methods: {
+      ...mapActions(["addAttempt"]),
+      newAttempt() {
+        this.activate = false;
+        this.addAttempt(this.letter);
+      }
     }
   };
 </script>
+
 
 <style>
   .key{
