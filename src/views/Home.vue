@@ -27,6 +27,7 @@
 
 <script>
   import { mapState } from "vuex";
+  import words from "./listWord.js";
 
   import Letter from "@/components/Letter.vue";
   import KeyboardKey from "@/components/KeyboardKey.vue";
@@ -41,6 +42,7 @@
       return {
         player: "",
         attempts: [],
+        wordToGuess: ""
       }
     },
     computed: {
@@ -49,9 +51,6 @@
         if (!~this.hiddenWord.indexOf('_'))
           return true;
         return false;
-      },
-      wordToGuess() {
-        return "Boris".toUpperCase();
       },
       hiddenWord() {
         let word = "",
@@ -70,7 +69,15 @@
         this.$store.dispatch("addEntries", { player: this.player, score: this.attempts.length});
         this.attempts = [];
         this.player = "";
+        this.wordToGuess = this.getWord();
+      },
+      getWord() {
+        let index = Math.floor(Math.random() * words.length);
+        return words[index].toUpperCase();
       }
+    },
+    created() {
+      this.wordToGuess = this.getWord();
     }
   }
 </script>
