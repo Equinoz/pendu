@@ -1,5 +1,5 @@
 <template>
-  <div @click.once="newAttempt" class="key" :class="{ desactivate: !activate }">
+  <div @click="newAttempt" class="key" :class="{ desactivate: !activate }">
     {{ letter }}
   </div>
 </template>
@@ -11,16 +11,22 @@
       letter: {
         type: String,
         required: true
+      },
+      attempts: {
+        type: Array,
+        required: true
       }
     },
-    data: function() {
-      return {
-        activate: true
+    computed: {
+      activate() {
+        if (!~this.attempts.indexOf(this.letter))
+          return true;
+        else
+          return false;
       }
     },
     methods: {
       newAttempt() {
-        this.activate = false;
         this.$emit("add-attempt", { letter: this.letter });
       }
     }
