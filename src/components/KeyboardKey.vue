@@ -5,8 +5,6 @@
 </template>
 
 <script>
-  import { mapActions } from "vuex";
-
   export default {
     name: "KeyboardKey",
     props: {
@@ -21,10 +19,9 @@
       }
     },
     methods: {
-      ...mapActions(["addAttempt"]),
       newAttempt() {
         this.activate = false;
-        this.addAttempt(this.letter);
+        this.$emit("add-attempt", { letter: this.letter });
       }
     }
   };

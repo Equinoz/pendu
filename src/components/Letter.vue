@@ -1,6 +1,6 @@
 <template>
   <div class="letter">
-    {{ getLetter }}
+    {{ letter }}
   </div>
 </template>
 
@@ -11,19 +11,6 @@
       letter: {
         type: String,
         required: true
-      }
-    },
-    data: function(){
-      return {
-        found: false
-      }
-    },
-    computed: {
-      getLetter() {
-        if (this.found)
-          return this.letter;
-        else
-          return '_';
       }
     }
   };

@@ -3,12 +3,12 @@
     <h1>Pendu</h1>
     <h2>Partie de {{ player }}</h2>
     <div id="wordToGuess">
-      <Letter  v-for="(item, index) in wordToGuess.toUpperCase()"
+      <Letter  v-for="(item, index) in hiddenWord"
         :letter="item"
         :key="index" />
     </div>
     <div id="keyboard">
-      <KeyboardKey v-for="item in Array.from(Array(26).keys(), i => String.fromCharCode(i + 65))"
+      <KeyboardKey @add-attempt="addAttempt" v-for="item in Array.from(Array(26).keys(), i => String.fromCharCode(i + 65))"
         :key="item"
         :letter="item" />
     </div>
@@ -28,7 +28,24 @@
     data() {
       return {
         player: "Julien",
-        wordToGuess: "Boris"
+        attempts: []
+      }
+    },
+    computed: {
+      wordToGuess() {
+        return "Boris".toUpperCase();
+      },
+      hiddenWord() {
+        let word = "",
+            letter;
+        for (letter of this.wordToGuess)
+          word += (~this.attempts.indexOf(letter)) ? letter : '_';
+        return word;
+      }
+    },
+    methods: {
+      addAttempt(payload) {
+        this.attempts.push(payload.letter);
       }
     }
   }
@@ -40,6 +57,7 @@
     flex-direction: column;
     align-items: center;
   }
+
   h1 {
     margin: 5px;
     font-size: 50px;
