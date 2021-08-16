@@ -22,8 +22,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100px;
-    width: 100px;
+    height: 90px;
+    width: 90px;
     margin: 20px;
     border: solid 1px black;
     border-radius: 20px;

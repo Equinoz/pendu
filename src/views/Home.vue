@@ -91,7 +91,7 @@
 
   h1 {
     margin: 5px;
-    font-size: 50px;
+    font-size: 45px;
   }
 
   #wordToGuess {
@@ -102,7 +102,7 @@
     display: flex;
     flex-wrap: wrap;
     width: 1200px;
-    margin-top: 50px;
+    margin-top: 30px;
   }
 
   #victoryMessage {
@@ -110,10 +110,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 150px;
-    width: 800px;
-    margin-top: 40px;
-    font-size: 50px;
+    height: 100px;
+    width: 700px;
+    margin-top: 30px;
+    font-size: 35px;
     border: black 1px solid;
     border-radius: 20px;
   }
@@ -122,11 +122,11 @@
     display: flex;
     flex-direction: column;
     padding-top: 40px;
-    font-size: 40px;
+    font-size: 30px;
   }
 
   #input > input {
     text-align: center;
-    font-size: 40px;
+    font-size: 30px;
   }
 </style>
