@@ -20,9 +20,13 @@
   };
 </script>
 
-<style>
+<style lang="scss">
   h1 {
     padding-top: 40px;
+
+    @media all and (max-width: 600px) {
+      font-size: 35px;
+    }
   }
 
   #results {

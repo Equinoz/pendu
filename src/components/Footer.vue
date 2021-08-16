@@ -15,6 +15,7 @@
 	.footer {
 		background-color: #efefef;
 		padding: 15px;
+		border-top: 1px #dedede solid;
 
 		:first-child {
 			font-size: 25px;

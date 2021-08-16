@@ -82,7 +82,7 @@
   }
 </script>
 
-<style>
+<style lang="scss">
   .home {
     display: flex;
     flex-direction: column;
@@ -92,17 +92,31 @@
   h1 {
     margin: 5px;
     font-size: 45px;
+
+    @media all and (max-width: 600px) {
+      font-size: 35px;
+    }
   }
 
   #wordToGuess {
     display: flex;
+    justify-content: center;
+
+    @media all and (max-width: 1350px) {
+      width: 100%;
+    }
   }
 
   #keyboard {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     width: 1200px;
     margin-top: 30px;
+
+    @media all and (max-width: 1230px) {
+      width: 100%;
+    }
   }
 
   #victoryMessage {
@@ -116,6 +130,12 @@
     font-size: 35px;
     border: black 1px solid;
     border-radius: 20px;
+
+    @media all and (max-width: 800px) {
+      width: 100%;
+      padding: 0 5px 0 5px;
+      font-size: 25px;
+    }
   }
 
   #input {
@@ -123,10 +143,15 @@
     flex-direction: column;
     padding-top: 40px;
     font-size: 30px;
-  }
+    margin-bottom: 25px;
 
-  #input > input {
-    text-align: center;
-    font-size: 30px;
+    input {
+      text-align: center;
+      font-size: 30px;
+    }
+
+    @media all and (max-width: 800px) {
+      font-size: 20px;
+    }
   }
 </style>

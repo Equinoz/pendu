@@ -34,7 +34,7 @@
 </script>
 
 
-<style>
+<style lang="scss">
   .key{
     background-color: #e3f2e3;
     display: flex;
@@ -42,12 +42,27 @@
     align-items: center;
     flex: 1 1 calc(100% / 13 - 1em);
     height: 70px;
-    width: 70px;
+    max-width: 70px;
     margin: 10px;
     font-size: 25px;
     border: solid 1px black;
     border-radius: 10px;
     box-shadow: 4px 4px 2px grey;
+
+    @media all and (max-width: 1230px) {
+      flex: 1 1 calc(100% / 9 - 1em);
+      height: 60px;
+      max-width: 60px;
+    }
+
+    @media all and (max-width: 850px) {
+      flex: 1 1 calc(100% / 7 - 1em);
+      height: 40px;
+      max-width: 40px;
+      margin: 5px;
+      font-size: 15px;
+      box-shadow: 2px 2px 1px #a8a8a8;
+    }
   }
 
   .key:hover {
