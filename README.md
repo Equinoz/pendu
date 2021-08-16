@@ -1,24 +1,20 @@
-# pendu
+# Pendu
 
-## Project setup
-```
-npm install
-```
+## Jeu de pendu réalisé en Vue.js
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+### Utilisation
 
-### Compiles and minifies for production
+#### Téléchargement du repository:  
 ```
-npm run build
+git clone https://github.com/Equinoz/pendu.git && cd ./pendu
 ```
 
-### Lints and fixes files
+#### Installation des dépendances et compilation pour lancer le script en mode développement:  
 ```
-npm run lint
+npm install && npm run serve
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+#### Compilation et minification pour lancer le script en mode production:  
+```
+npm run build && npm run start
+```
