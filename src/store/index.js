@@ -16,15 +16,13 @@ export default new Vuex.Store({
         else if (a.score < b.score)
           return -1;
         else
-          return ;
+          return;
       });
     }
   },
   actions: {
-    addEntries(context, newEntry) {
-      context.commit("ADD_ENTRIES", newEntry);
+    addEntries({ commit }, newEntry) {
+      commit("ADD_ENTRIES", newEntry);
     }
   },
-  modules: {
-  }
 });

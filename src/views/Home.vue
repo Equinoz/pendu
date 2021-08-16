@@ -3,7 +3,7 @@
     <h1>Pendu</h1>
     <h2 v-if="results.length > 0">Meilleur score: {{ results[0].player }} - {{ results[0].score }} points</h2>
     <div id="wordToGuess">
-      <Letter  v-for="(item, index) in hiddenWord"
+      <Letter v-for="(item, index) in hiddenWord"
         :letter="item"
         :key="index" />
     </div>
@@ -53,8 +53,7 @@
         return false;
       },
       hiddenWord() {
-        let word = "",
-            letter;
+        let word = "", letter;
         for (letter of this.wordToGuess)
           word += (~this.attempts.indexOf(letter)) ? letter : '_';
         return word;
@@ -62,7 +61,7 @@
     },
     methods: {
       addAttempt(payload) {
-        if (!~this.attempts.indexOf(payload.letter))
+      if (!~this.attempts.indexOf(payload.letter))
           this.attempts.push(payload.letter);
       },
       saveResult() {
